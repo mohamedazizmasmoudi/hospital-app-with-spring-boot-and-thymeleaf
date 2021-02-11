@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dashboard Admin</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet"  th:href="@{/styles/normalize.css}" />
+    <link rel="stylesheet"  th:href="@{/styles/index.css}"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="nav">
+        <ul class="nav__list" role="menubar">
+          <li class="nav__item ">
+            <a
+              th:href="@{/}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Home"
+            >
+              <svg
+                class="nav__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                role="presentation"
+              >
+                <path
+                  fill="#6563ff"
+                  d="M20,8h0L14,2.74a3,3,0,0,0-4,0L4,8a3,3,0,0,0-1,2.26V19a3,3,0,0,0,3,3H18a3,3,0,0,0,3-3V10.25A3,3,0,0,0,20,8ZM14,20H10V15a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1Zm5-1a1,1,0,0,1-1,1H16V15a3,3,0,0,0-3-3H11a3,3,0,0,0-3,3v5H6a1,1,0,0,1-1-1V10.25a1,1,0,0,1,.34-.75l6-5.25a1,1,0,0,1,1.32,0l6,5.25a1,1,0,0,1,.34.75Z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="nav__item nav__item--isActive">
+            <a
+th:href="@{~/doctor/allDoctors}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Favorite projects"
+            >
+            
+       <img  th:src="@{/img/doctor.png}" style="    color: #f00;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);" />
+            </a>
+          </li>
+          <li class="nav__item ">
+            <a
+              th:href="@{~/patient/allPatients}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Informational messages"
+              >       
+       <img  th:src="@{/img/hospitalisation.png}"   />
+
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              th:href="@{~/lit/allLitsnocharge}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Collections"
+            >
+       <img  th:src="@{/img/patient.png}"  />
+
+            </a>
+          </li>
+          <li class="nav__item ">
+            <a
+              th:href="@{~/chambre/liste}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Analytics"
+            >
+       <img  th:src="@{/img/surgery-room.png}"  />
+
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <main class="main">
+        <header class="header">
+          <div class="header__wrapper">
+           <button  type="submit">
+             
+              </button>
+            <div class="profile">
+              <button class="profile__button">
+                <span class="profile__name" th:text="${username}">Admin</span>
+                <img
+                  class="profile__img"
+                src="https://img.icons8.com/bubbles/2x/admin-settings-male.png"
+                  
+                  alt="Profile picture"
+                  loading="lazy"
+                />
+              </button>
+            </div>
+          </div>
+        </header>
+ 
+        <section class="section">
+          <header class="section__header">
+            <h2 class="section__title">Doctors</h2>
+            <div class="section__control" th:if="${role=='admin'}">
+       <a th:href="@{addDocotor}">
+       
+              <button
+                class="section__button section__button--painted focus--box-shadow"
+                type="button"
+                aria-label="Add New Doctor"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  role="presentation"
+                >
+              <path
+                    d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"
+                  />
+                </svg>
+              </button> </a>
+            </div>
+          </header>
+              <ul class="project" >
+            <li class="project__item" >
+              <div class="project__link focus--box-shadow">
+                <div class="project__wrapper">
+                  <div class="project__element project__icon">
+           
+                  <p>Cin</p>
+                  </div>
+                  <div class="project__element project__inform">
+                    <span class="project__inform-name" 
+                      >Nom</span
+                    >
+                  </div>
+                   <div class="project__element project__inform">
+                    <span class="project__inform-name" 
+                      >Prenom</span
+                    >
+                  </div>
+         
+                    <div class="project__element project__inform">
+                    <span class="project__inform-name" 
+                      >Age</span
+                    >
+                  </div>
+                  <div class="project__element project__inform">
+                    <span class="project__inform-name" 
+                      >Email</span
+                    >
+                  </div>
+                  <div class="project__element project__inform">
+                    <span class="project__inform-name" 
+                      >Job</span
+                    >
+                  </div>
+          
+                  
+                  <div class="project__element project__status">
+                   <span class="project__inform-name" 
+                      >Departement</span
+                    >
+                  </div>
+                  <div class="project__element project__setting">
+                      
+                    <button
+                      class="setting setting--rotate focus--box-shadow"
+                      type="button"
+                      
+                    >
+                    </button>
+                  </div>
+                      <div class="project__element project__setting">
+                      
+                    <button
+                      class="setting setting--rotate focus--box-shadow"
+                      type="button"
+                      
+                    >
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <br />
+                   <ul class="project" >
+            <li class="project__item" th:each="pa:${pa}" >
+              <div class="project__link focus--box-shadow">
+                <div class="project__wrapper">
+                  <div class="project__element project__icon">
+           
+                  <p th:text="${pa.cin}"></p>
+                  </div>
+                  <div class="project__element project__inform">
+                    <span class="project__inform-name" 
+                     th:text="${pa.nom}"   ></span
+                    >
+                  </div>
+                   <div class="project__element project__inform">
+                    <span class="project__inform-name" 
+                   th:text="${pa.prenom}"   ></span
+                    >
+                  </div>
+             
+                    <div class="project__element project__inform">
+                    <span class="project__inform-name" 
+                     th:text="${pa.age}" ></span
+                    >
+                  </div>
+                  <div class="project__element project__inform">
+                    <span class="project__inform-name" 
+                    th:text="${pa.email}"  ></span
+                    >
+                  </div>
+                  <div class="project__element project__inform">
+                    <span class="project__inform-name" 
+                    th:text="${pa.job}"  ></span
+                    >
+                  </div>
+          
+                  
+                  <div class="project__element project__status">
+                   <span class="project__inform-name" 
+                    th:text="${pa.departement}"  ></span
+                    >
+                  </div>
+               <div class="project__element project__status" th:if="${role=='admin'}">
+                     <a th:href="@{suprimer(id=${pa.cin})}"> 
+                    <button
+                      class="setting setting--rotate focus--box-shadow"
+                      type="button"
+                      
+                    >
+            <img th:src="@{/img/delete.png}" />
+                    </button></a>
+                  </div>
+                  <div class="project__element project__setting" th:if="${role=='admin'}">
+                      <a th:href="@{DoctorDetail(id=${pa.cin})}"> 
+                    <button
+                      class="setting setting--rotate focus--box-shadow"
+                      type="button"
+                      
+                    >
+            <img th:src="@{/img/edit.png}" />
+                    </button></a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+    </div>
+  </body>
+</html>

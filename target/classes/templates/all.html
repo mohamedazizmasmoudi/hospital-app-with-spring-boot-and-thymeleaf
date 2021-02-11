@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dashboard admin</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet"  th:href="@{/styles/normalize.css}" />
+    <link rel="stylesheet"  th:href="@{/styles/index.css}"/>
+  </head>
+  <body>
+    <div class="wrapper">
+     <nav class="nav">
+        <ul class="nav__list" role="menubar">
+          <li class="nav__item nav__item--isActive">
+            <a
+              th:href="@{/}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Home"
+            >
+              <svg
+                class="nav__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                role="presentation"
+              >
+                <path
+                  fill="#6563ff"
+                  d="M20,8h0L14,2.74a3,3,0,0,0-4,0L4,8a3,3,0,0,0-1,2.26V19a3,3,0,0,0,3,3H18a3,3,0,0,0,3-3V10.25A3,3,0,0,0,20,8ZM14,20H10V15a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1Zm5-1a1,1,0,0,1-1,1H16V15a3,3,0,0,0-3-3H11a3,3,0,0,0-3,3v5H6a1,1,0,0,1-1-1V10.25a1,1,0,0,1,.34-.75l6-5.25a1,1,0,0,1,1.32,0l6,5.25a1,1,0,0,1,.34.75Z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              th:href="@{~/doctor/allDoctors}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Favorite projects"
+            >
+            
+       <img  th:src="@{/img/doctor.png}"  />
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+th:href="@{~/patient/allPatients}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Informational messages"
+              >       
+       <img  th:src="@{/img/hospitalisation.png}"  />
+
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              th:href="@{~/lit/allLitsnocharge}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Collections"
+            >
+       <img  th:src="@{/img/patient.png}"  />
+
+            </a>
+          </li>
+          <li class="nav__item ">
+            <a
+              th:href="@{~/chambre/liste}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Analytics"
+            >
+       <img  th:src="@{/img/surgery-room.png}"  />
+
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <main class="main">
+        <header class="header">
+          <div class="header__wrapper">
+     
+     
+          </div>
+        </header>
+        <section class="section">
+          <header class="section__header">
+            <h2 class="section__title">Espaces</h2>
+         <a th:href="@{sign}"> <h2 class="section__title">logout</h2></a>  
+            
+          </header>
+          <ul class="espace">
+            <li class="espace__item">
+              <a class="espace__link focus--box-shadow"   th:href="@{~/doctor/allDoctors}">
+                <div class="espace__header">
+                  <ul class="photo">
+                    <li class="photo__item">
+                      <span class="photo__substrate">+2</span>
+                    </li>
+                    <li class="photo__item">
+                      <img
+                        src="./img/julian-wan-WNoLnJo7tS8-unsplash.jpg"
+                        alt="Jack's photo"
+                      />
+                    </li>
+                    <li class="photo__item">
+                      <img
+                        src="./img/seth-doyle-uJ8LNVCBjFQ-unsplash.jpg"
+                        alt="Jessica's photo"
+                      />
+                    </li>
+                  </ul>
+                  <button
+                    class="setting setting--absolute focus--box-shadow"
+                    type="button"
+                  >
+                    <svg
+                      enable-background="new 0 0 515.555 515.555"
+                      height="512"
+                      viewBox="0 0 515.555 515.555"
+                      width="512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="espace__inform">
+                  <p class="espace__name">Espace Médecin
+                  </p>
+                  <time class="date" datetime="2020-05-05T10:00:00"
+                    >02 Feb, 2021</time
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="espace__item">
+              <a class="espace__link focus--box-shadow"   th:href="@{patient/allPatients}">
+                <div class="espace__header">
+                    <ul class="photo">
+                    <li class="photo__item">
+                      <span class="photo__substrate">+6</span>
+                    </li>
+                    <li class="photo__item">
+                      <img
+                        src="./img/raychan-9UkAHVs5y7Y-unsplash.jpg"
+                        alt="Yulia's photo"
+                      />
+                    </li>
+                    <li class="photo__item">
+                      <img
+                        src="./img/seth-doyle-uJ8LNVCBjFQ-unsplash.jpg"
+                        alt="Jessica's photo"
+                      />
+                    </li>
+                  </ul>
+                  <button
+                    class="setting setting--absolute focus--box-shadow"
+                    type="button"
+                  >
+                    <svg
+                      enable-background="new 0 0 515.555 515.555"
+                      height="512"
+                      viewBox="0 0 515.555 515.555"
+                      width="512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="espace__inform">
+                  <p class="espace__name">Espace Patient</p>
+                  <time class="date" datetime="2020-05-01T10:00:00"
+                    >05 Fev, 2020</time
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="espace__item">
+              <a class="espace__link focus--box-shadow"  th:href="@{chambre/liste}">
+                <div class="espace__header">
+                  <ul class="photo">
+                    <li class="photo__item">
+                      <img
+                        src="./img/seth-doyle-uJ8LNVCBjFQ-unsplash.jpg"
+                        alt="Jessica's photo"
+                      />
+                    </li>
+                  </ul>
+                  <button
+                    class="setting setting--absolute focus--box-shadow"
+                    type="button"
+                  >
+                    <svg
+                      enable-background="new 0 0 515.555 515.555"
+                      height="512"
+                      viewBox="0 0 515.555 515.555"
+                      width="512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="espace__inform">
+                  <p class="espace__name">Design development</p>
+                  <time class="date" datetime="2020-01-10T10:00:00"
+                    >10 January, 2021</time
+                  >
+                </div>
+              </a>
+            </li>
+          </ul>
+          
+          <br />
+                   <ul class="espace">
+            <li class="espace__item">
+              <a class="espace__link focus--box-shadow" th:href="@{lit/allLitsnocharge}">
+                <div class="espace__header">
+            
+                  <button
+                    class="setting setting--absolute focus--box-shadow"
+                    type="button"
+                  >
+                    <svg
+                      enable-background="new 0 0 515.555 515.555"
+                      height="512"
+                      viewBox="0 0 515.555 515.555"
+                      width="512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="espace__inform">
+                  <p class="espace__name">Espace Lit non chargé</p>
+                  <time class="date" datetime="2020-05-05T10:00:00"
+                    >30 Jan, 2021</time
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="espace__item">
+              <a class="espace__link focus--box-shadow"   th:href="@{chambre/liste}">
+                <div class="espace__header">
+       
+                  <button
+                    class="setting setting--absolute focus--box-shadow"
+                    type="button"
+                  >
+                    <svg
+                      enable-background="new 0 0 515.555 515.555"
+                      height="512"
+                      viewBox="0 0 515.555 515.555"
+                      width="512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="espace__inform">
+                  <p class="espace__name">Espace Chambre</p>
+                  <time class="date" datetime="2020-05-01T10:00:00"
+                    >20 Jan, 2021</time
+                  >
+                </div>
+              </a>
+            </li>
+            <li class="espace__item">
+              <a class="espace__link focus--box-shadow" href="#">
+                <div class="espace__header">
+                  <ul class="photo">
+                    <li class="photo__item">
+                      <img
+                        src="./img/seth-doyle-uJ8LNVCBjFQ-unsplash.jpg"
+                        alt="Jessica's photo"
+                      />
+                    </li>
+                  </ul>
+                  <button
+                    class="setting setting--absolute focus--box-shadow"
+                    type="button"
+                  >
+                    <svg
+                      enable-background="new 0 0 515.555 515.555"
+                      height="512"
+                      viewBox="0 0 515.555 515.555"
+                      width="512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m303.347 18.875c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 212.209c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                      <path
+                        d="m303.347 405.541c25.167 25.167 25.167 65.971 0 91.138s-65.971 25.167-91.138 0-25.167-65.971 0-91.138c25.166-25.167 65.97-25.167 91.138 0"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="espace__inform">
+                  <p class="espace__name">Design development</p>
+                  <time class="date" datetime="2020-01-10T10:00:00"
+                    >10 January, 2020</time
+                  >
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+      </main>
+      <aside class="aside">
+        <section class="section">
+      
+          <div class="profile-main">
+            <button
+              class="profile-main__setting focus--box-shadow"
+              type="button"
+            >
+              <img
+                class="profile-main__photo"
+                src="https://img.icons8.com/bubbles/2x/admin-settings-male.png"
+                alt="Profile photo"
+              />
+            </button>
+            <h1 class="profile-main__name" th:text="${username}"></h1>
+          </div>
+          <ul class="statistics">
+            <li class="statistics__entry">
+              <a class="statistics__entry-description" href="#">Médecin</a
+              ><span class="statistics__entry-quantity" th:text="${doctor}"></span>
+            </li>
+            <li class="statistics__entry">
+              <a class="statistics__entry-description" href="#">Patient</a
+              ><span class="statistics__entry-quantity" th:text="${patient}"></span>
+            </li>
+            <li class="statistics__entry">
+              <a class="statistics__entry-description" href="#">Lit</a
+              ><span class="statistics__entry-quantity" th:text="${lit}"></span>
+            </li>
+               <li class="statistics__entry">
+              <a class="statistics__entry-description" href="#">Chambre</a
+              ><span class="statistics__entry-quantity" th:text="${chambre}"></span>
+            </li>
+          </ul>
+      
+        </section>
+      </aside>
+    </div>
+  </body>
+</html>

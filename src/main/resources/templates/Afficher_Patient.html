@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dashboard Admin</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet"  th:href="@{/styles/normalize.css}" />
+    <link rel="stylesheet"  th:href="@{/styles/index.css}"/>
+  </head>
+  <body>
+    <div class="wrapper">
+       <nav class="nav">
+        <ul class="nav__list" role="menubar">
+          <li class="nav__item ">
+            <a
+              th:href="@{/}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Home"
+            >
+              <svg
+                class="nav__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                role="presentation"
+              >
+                <path
+                  fill="#6563ff"
+                  d="M20,8h0L14,2.74a3,3,0,0,0-4,0L4,8a3,3,0,0,0-1,2.26V19a3,3,0,0,0,3,3H18a3,3,0,0,0,3-3V10.25A3,3,0,0,0,20,8ZM14,20H10V15a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1Zm5-1a1,1,0,0,1-1,1H16V15a3,3,0,0,0-3-3H11a3,3,0,0,0-3,3v5H6a1,1,0,0,1-1-1V10.25a1,1,0,0,1,.34-.75l6-5.25a1,1,0,0,1,1.32,0l6,5.25a1,1,0,0,1,.34.75Z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+th:href="@{~/doctor/allDoctors}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Favorite projects"
+            >
+            
+       <img  th:src="@{/img/doctor.png}"  />
+            </a>
+          </li>
+          <li class="nav__item nav__item--isActive">
+            <a
+              th:href="@{~/patient/allPatients}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Informational messages"
+              >       
+       <img  th:src="@{/img/hospitalisation.png}" style="    color: #f00;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);"  />
+
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              th:href="@{~/lit/allLitsnocharge}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Collections"
+            >
+       <img  th:src="@{/img/patient.png}"  />
+
+            </a>
+          </li>
+          <li class="nav__item ">
+            <a
+              th:href="@{~/chambre/liste}"
+              class="nav__link focus--box-shadow"
+              role="menuitem"
+              aria-label="Analytics"
+            >
+       <img  th:src="@{/img/surgery-room.png}"  />
+
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <main class="main">
+        <header class="header">
+          <div class="header__wrapper">
+              <button  type="submit">
+             
+              </button>
+          
+            <div class="profile">
+              <button class="profile__button">
+                <span class="profile__name" th:text="${username}"></span>
+                <img
+                  class="profile__img"
+                src="https://img.icons8.com/bubbles/2x/admin-settings-male.png"
+                  
+                  alt="Profile picture"
+                  loading="lazy"
+                />
+              </button>
+            </div>
+          </div>
+        </header>
+ 
+        <section class="section">
+          <header class="section__header">
+            <h2 class="section__title">Modifier Patient</h2>
+       
+          </header>
+              <ul class="project" >
+            <li class="project__item" >
+              <div class="project__link focus--box-shadow">
+                <div class="project__wrapper">
+                
+                
+           <form  th:action="@{modifier(id=${param.id})}" method="post" style="width:100.; diplay:flex; flex-direction:row;">
+           
+           
+            <label for="numero cin de pataient " class="mar">cin</label>
+        
+              <label
+                class="marg" 
+                type="number"
+                th:text="*{p.cin}"
+                th:required="required"
+            /> 
+              <br />	
+            <label for="nom de patient " class="mar">Nom</label>
+        
+              <input
+                class="marg" 
+                type="text"
+                th:field="*{p.nom}"
+                th:required="required"
+              /> 
+              <br />	
+                  <label for="capacite" class="form-label mar">Prenom</label>
+                            <br />
+              
+              <input
+                class="marg"
+                type="text"
+                th:field="*{p.prenom}"
+                th:required="required"
+              /> 
+               <br />	
+                  <label for="maladie" class="form-label mar">maladie</label>
+                            <br />
+              
+              <input
+                class="marg"
+                type="text"
+                th:field="*{p.maladie}"
+                th:required="required"
+              /> 
+               <label for="phone" class="form-label mar">phone</label>
+                            <br />
+              
+              <input
+                class="marg"
+                type="number"
+                th:field="*{p.phoneNumber}"
+                th:required="required"
+              /> 
+                  <label for="age" class="form-label mar">age</label>
+                            <br />
+              
+              <input
+                class="marg"
+                type="number"
+                th:field="*{p.age}"
+                th:required="required"
+              /> 
+                <label for="mail" class="form-label mar">mail</label>
+                            <br />
+              
+              <input
+                class="marg"
+                type="email"
+                th:field="*{p.email}"
+                th:required="required"
+              /> 
+             
+       
+              <button
+                class="section__button section__button--painted focus--box-shadow"
+ type="submit"            
+     aria-label="update patient"
+     style="color: #e9e8ec;font-size:20px"
+              >
+             Submit
+              </button> 
+              
+              
+            </form>
+            
+                
+                
+                 
+                </div>
+              </div>
+            </li>
+          </ul>
+          <br />
+         
+        </section>
+          
+      </main>
+
+    </div>
+  </body>
+</html>
