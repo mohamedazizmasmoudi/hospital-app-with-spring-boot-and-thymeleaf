@@ -86,14 +86,14 @@ public class DashboardControler {
 model.addAttribute("username",username);
 model.addAttribute("role","admin");
 
-		return "all.html";			
+		return "all";			
 	}
 	if("doctor@gmail.com".equals(email) && "doctor".equals(password)) {
 		
 		model.addAttribute("username",username);
 		model.addAttribute("role","doctor");
 
-				return "all.html";			
+				return "all";			
 			}
 	
 	int c1=  lit.countalllit();
